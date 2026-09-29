@@ -1,81 +1,85 @@
 # Résumé
 
-
-
 <div class="timeline">
-
-<div class="timeline-item">
+  <div class="timeline-item">
     <span class="timeline-dot"></span>
     <div class="timeline-header">
-      <span class="timeline-org">University of Oxford</span>
-      <span class="timeline-role">DPhil in Machine Learning</span>
-      <span class="timeline-dates">Oct 2024 – <strong class="text-accent">Present</strong></span>
+      <span class="timeline-org">University of Florida</span>
+      <span class="timeline-role">B.S. in Business Administration – Finance</span>
+      <span class="timeline-dates">May 2029</span>
     </div>
-    <div class="timeline-desc">Exploring the scaling laws of AI Safety.</div>
+    <div class="timeline-meta">Gainesville, FL • Honors Program</div>
+    <div class="timeline-desc">Minor in Computer and Information Science and Engineering</div>
+    <div class="timeline-desc">GPA: 3.77/4.00 • SAT: 1550/1600</div>
   </div>
 
   <div class="timeline-item">
     <span class="timeline-dot"></span>
     <div class="timeline-header">
-      <span class="timeline-org">Spotify</span>
-      <span class="timeline-role">Research Scientist Intern</span>
-      <span class="timeline-dates">Jun 2025 – Aug 2025</span>
+      <span class="timeline-org">UF AI2 Center</span>
+      <span class="timeline-role">Student Assistant</span>
+      <span class="timeline-dates">Aug 2026 – <strong class="text-accent">Present</strong></span>
     </div>
-    <div class="timeline-meta">London, UK • Hybrid</div>
-    <div class="timeline-desc">Investigating mechanistic interpretability for long-context reasoning in LLMs.</div>
+    <div class="timeline-meta">Gainesville, FL • 10 hours/week</div>
+    <div class="timeline-desc">Coordinates AI Club operations, manages member registration and communications, and supports GBM and tabling events. Administers the AI Medallion program by reviewing applications and managing student approvals and denials.</div>
   </div>
 
   <div class="timeline-item">
     <span class="timeline-dot"></span>
     <div class="timeline-header">
-      <span class="timeline-org">UK AI Security Institute (AISI)</span>
-      <span class="timeline-role">Bounty Programme</span>
-      <span class="timeline-dates">Feb 2025 – Mar 2025</span>
+      <span class="timeline-org">UF Housing and Residence Life</span>
+      <span class="timeline-role">Resident Assistant</span>
+      <span class="timeline-dates">Aug 2026 – <strong class="text-accent">Present</strong></span>
     </div>
-    <div class="timeline-meta">Remote • Contract</div>
-    <div class="timeline-desc">Investigating the automated design of agentic systems for cybersecurity benchmarks.</div>
+    <div class="timeline-meta">Gainesville, FL • 20 hours/week</div>
+    <div class="timeline-desc">Fosters relationships with 48 residents, provides peer mentorship, resolves conflicts, and plans educational and social programs to support community development.</div>
   </div>
 
   <div class="timeline-item">
     <span class="timeline-dot"></span>
     <div class="timeline-header">
-      <span class="timeline-org">Convergence</span>
-      <span class="timeline-role">Founding Member of Research Staff</span>
-      <span class="timeline-dates">Jul 2024 – Sep 2024</span>
+      <span class="timeline-org">Diverse Invested Student Securities (DISS) Capital</span>
+      <span class="timeline-role">Communications Investment Analyst</span>
+      <span class="timeline-dates">May 2026 – <strong class="text-accent">Present</strong></span>
     </div>
-    <div class="timeline-meta">London, UK • On-site</div>
-    <div class="timeline-desc">Exploring automation and collaboration with web agents. <span class="text-accent">Acquired by Salesforce</span>.</div>
+    <div class="timeline-meta">Gainesville, FL</div>
+    <div class="timeline-desc">Manages a $1.7M+ virtual capital base in a sector-neutral portfolio benchmarked against the S&amp;P 500. Pitches undervalued stocks, builds investment teasers, and contributes equity research and valuation analysis.</div>
   </div>
 
   <div class="timeline-item">
     <span class="timeline-dot"></span>
     <div class="timeline-header">
-      <span class="timeline-org">Pynea</span>
-      <span class="timeline-role">Principal Machine Learning Engineer</span>
-      <span class="timeline-dates">Jan 2024 – Jul 2024</span>
+      <span class="timeline-org">DISS Capital</span>
+      <span class="timeline-role">Fundamental Analyst</span>
+      <span class="timeline-dates">Jan 2026 – May 2026</span>
     </div>
-    <div class="timeline-meta">London, UK • On-site</div>
-    <div class="timeline-desc">Building recommender and search systems. Exploring geometric deep learning.</div>
+    <div class="timeline-meta">Gainesville, FL</div>
+    <div class="timeline-desc">Completed a 10-week valuation curriculum using CapIQ, Bloomberg, and Excel. Built a DCF model and collaborated on a comparable companies analysis for Klaviyo, culminating in a final stock pitch presentation.</div>
   </div>
 
   <div class="timeline-item">
     <span class="timeline-dot"></span>
     <div class="timeline-header">
-      <span class="timeline-org">Artera</span>
-      <span class="timeline-role">Lead Software Engineer (Founding Team)</span>
-      <span class="timeline-dates">Sep 2022 – Dec 2023</span>
+      <span class="timeline-org">Finance Professional Development – FinTech Track</span>
+      <span class="timeline-role">Junior Analyst</span>
+      <span class="timeline-dates">Sep 2026 – <strong class="text-accent">Present</strong></span>
     </div>
-    <div class="timeline-meta">London, UK • On-site</div>
-    <div class="timeline-desc">Leading the engineering team and developing foundational machine learning and computer vision algorithms.</div>
-  </div>
-
-  <div class="timeline-item">
-    <span class="timeline-dot"></span>
-    <div class="timeline-header">
-      <span class="timeline-org">University of Oxford</span>
-      <span class="timeline-role">Master of Engineering</span>
-      <span class="timeline-dates">Sep 2018 – Sep 2022</span>
-    </div>
-    <div class="timeline-meta">First Class • Academic Scholarship</div>
+    <div class="timeline-meta">Gainesville, FL</div>
+    <div class="timeline-desc">Develops financial data analysis skills using Python libraries including Pandas and NumPy. Evaluates FinTech products, market trends, and emerging technologies across payments, banking, AI, and automation.</div>
   </div>
 </div>
+
+<h3>Relevant Coursework</h3>
+<ul>
+  <li>Introduction to Financial Accounting</li>
+  <li>Foundations of Business Analytics and AI</li>
+</ul>
+
+<h3>Additional Information</h3>
+<ul>
+  <li>Honors/Awards: 1x Hackathon Winner (GeorgiaTech), STAR Award (Top 3% of High School Grads in St. John’s County)</li>
+  <li>Memberships: Finance Professional Development, Leadership Development Program, Computing Student Union, Data Science and Informatics Club (DSI), UF AI Club</li>
+  <li>Skills: Python, C++</li>
+  <li>Interests: Prediction Markets, Volleyball, Acoustic Guitar, Travel, Hiking, Chess</li>
+  <li>High School: Investment Club (Founder), Future Business Leaders of America (Cash Chair), Varsity Volleyball</li>
+</ul>

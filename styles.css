@@ -517,6 +517,7 @@ body {
     height: 120px;
     border-radius: 9999px;
     object-fit: cover;
+    object-position: center 18%;
     flex-shrink: 0;
     border: 2px solid var(--color-border);
     box-shadow: 0 2px 10px color-mix(in srgb, var(--color-shadow) 50%, transparent);
