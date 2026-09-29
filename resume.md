@@ -21,7 +21,7 @@
       <span class="timeline-dates">Aug 2026 – <strong class="text-accent">Present</strong></span>
     </div>
     <div class="timeline-meta">Gainesville, FL • 10 hours/week</div>
-    <div class="timeline-desc">Coordinates AI Club operations, manages member registration and communications, and supports GBM and tabling events. Administers the AI Medallion program by reviewing applications and managing student approvals and denials.</div>
+    <div class="timeline-desc">Coordinate AI Club operations, manage member registration and communications, and support GBM and tabling events. Administer the AI Medallion program by reviewing applications and managing student approvals and denials.</div>
   </div>
 
   <div class="timeline-item">
@@ -32,7 +32,7 @@
       <span class="timeline-dates">Aug 2026 – <strong class="text-accent">Present</strong></span>
     </div>
     <div class="timeline-meta">Gainesville, FL • 20 hours/week</div>
-    <div class="timeline-desc">Fosters relationships with 48 residents, provides peer mentorship, resolves conflicts, and plans educational and social programs to support community development.</div>
+    <div class="timeline-desc">Foster relationships with 48 residents, provide peer mentorship, resolve conflicts, and plan educational and social programs to support community development.</div>
   </div>
 
   <div class="timeline-item">
@@ -43,7 +43,7 @@
       <span class="timeline-dates">May 2026 – <strong class="text-accent">Present</strong></span>
     </div>
     <div class="timeline-meta">Gainesville, FL</div>
-    <div class="timeline-desc">Manages a $1.7M+ virtual capital base in a sector-neutral portfolio benchmarked against the S&amp;P 500. Pitches undervalued stocks, builds investment teasers, and contributes equity research and valuation analysis.</div>
+    <div class="timeline-desc">Manage a $1.7M+ virtual capital base in a sector-neutral portfolio benchmarked against the S&amp;P 500. Pitch undervalued stocks, build investment teasers, and contribute equity research and valuation analysis.</div>
   </div>
 
   <div class="timeline-item">
@@ -65,7 +65,7 @@
       <span class="timeline-dates">Sep 2026 – <strong class="text-accent">Present</strong></span>
     </div>
     <div class="timeline-meta">Gainesville, FL</div>
-    <div class="timeline-desc">Develops financial data analysis skills using Python libraries including Pandas and NumPy. Evaluates FinTech products, market trends, and emerging technologies across payments, banking, AI, and automation.</div>
+    <div class="timeline-desc">Develop financial data analysis skills using Python libraries including Pandas and NumPy. Evaluate FinTech products, market trends, and emerging technologies across payments, banking, AI, and automation.</div>
   </div>
 </div>
 
