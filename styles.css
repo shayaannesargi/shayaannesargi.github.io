@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 /* Reset and base styles */
 * {
     box-sizing: border-box;
@@ -11,34 +13,36 @@ html {
 
 /* CSS Custom Properties for theming */
 :root {
-    /* Light theme colors (inspired by astro-theme-cactus) */
+    --font-sans: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'SFMono-Regular', 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+    /* Light theme colors matched to the icon's blue branding */
     --color-global-bg: oklch(98.48% 0 0);
     --color-global-text: oklch(26.99% 0.0096 235.05);
-    --color-link: oklch(55.44% 0.0431 185.69);
-    --color-accent: #af67ff;
-    --color-accent-2: oklch(18.15% 0 0);
-    --color-quote: #af67ff;
-    --color-border: #e5e7eb;
+    --color-link: #0d5bd7;
+    --color-accent: #0d5bd7;
+    --color-accent-2: #10243f;
+    --color-quote: #0d5bd7;
+    --color-border: #dfeafc;
     --color-card-bg: rgba(255, 255, 255, 0.8);
     --color-shadow: rgba(0, 0, 0, 0.1);
 }
 
-/* Dark theme colors */
+/* Dark theme colors matched to the icon's orange branding */
 [data-theme="dark"] {
     --color-global-bg: oklch(23.64% 0.0045 248);
     --color-global-text: oklch(83.54% 0 264);
-    --color-link: oklch(70.44% 0.1133 349);
-    --color-accent: #5ff26b;
-    --color-accent-2: oklch(94.66% 0 0);
-    --color-quote: oklch(94.8% 0.106 136.49);
-    --color-border: #374151;
+    --color-link: #f59e0b;
+    --color-accent: #f59e0b;
+    --color-accent-2: #f8fafc;
+    --color-quote: #f59e0b;
+    --color-border: #3b2f21;
     --color-card-bg: rgba(31, 41, 55, 0.8);
     --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
 /* Base typography */
 body {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-family: var(--font-sans);
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -46,6 +50,11 @@ body {
     color: var(--color-global-text);
     transition: opacity 0.2s ease;
     padding-top: 8rem; /* Increased to account for fixed header */
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
 }
 
 /* Responsive body padding */
@@ -92,7 +101,7 @@ body {
 .text-2xl { font-size: 1.5rem; }
 .font-normal { font-weight: 400; }
 .font-bold { font-weight: 700; }
-.font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+.font-mono { font-family: var(--font-mono); }
 .antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .scroll-smooth { scroll-behavior: smooth; }
 .relative { position: relative; }
@@ -169,6 +178,7 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
+    font-family: var(--font-sans);
 }
 
 .cactus-link {
@@ -288,21 +298,35 @@ body {
     filter: none;
 }
 
-/* Make logo clickable with cursor pointer and subtle hover effect */
+/* Header logo is decorative and non-interactive */
 #main-header a[href="#"] {
-    cursor: pointer;
+    cursor: default;
+    pointer-events: none;
     transition: opacity 0.2s ease;
 }
 
-#main-header a[href="#"]:hover svg {
-    transform: scale(1.05);
-    transition: opacity 0.2s ease;
+.header-logo img {
+    width: 2.75rem;
+    height: 2.75rem;
+    object-fit: contain;
+    display: block;
+}
+
+@media (min-width: 640px) {
+    .header-logo img {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+}
+
+#main-header a[href="#"]:hover img {
+    transform: none;
+    transition: none;
 }
 
 #main-header a[href="#"]:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 4px;
-    border-radius: 4px;
+    outline: none;
+    border-radius: 0;
 }
 
 /* Navigation styles - Desktop */
@@ -1078,43 +1102,43 @@ html {
     }
 }
 
-/* Party Hat Explosion Animation Styles */
-.party-hat {
+/* Finance coin burst animation */
+.finance-coin {
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    width: 40px;
-    height: 40px;
+    width: 26px;
+    height: 26px;
     opacity: 1;
     transform-origin: center;
 }
 
-.party-hat svg {
+.finance-coin svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.25));
 }
 
-@keyframes partyHatExplosion {
+@keyframes coinSpiral {
     0% {
         opacity: 1;
         transform: scale(0.5) rotate(0deg);
     }
-    20% {
+    35% {
         opacity: 1;
-        transform: scale(1.2) rotate(72deg);
+        transform: scale(1.1) rotate(140deg);
     }
     100% {
         opacity: 0;
-        transform: scale(0.8) rotate(360deg);
+        transform: scale(0.85) rotate(360deg);
     }
 }
 
-.party-hat.exploding {
-    animation: partyHatExplosion 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+.finance-coin.spiraling {
+    animation: coinSpiral 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Logo pulse animation for party mode */
+/* Logo pulse animation */
 .logo-party-pulse {
     animation: partyPulse 0.6s ease-out;
 }
@@ -1124,49 +1148,17 @@ html {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.08);
     }
     100% {
         transform: scale(1);
     }
 }
 
-/* Confetti-like sparkles */
-.party-sparkle {
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    width: 8px;
-    height: 8px;
-    background: var(--color-accent);
-    border-radius: 50%;
-    opacity: 1;
-}
-
-@keyframes sparkleExplosion {
-    0% {
-        opacity: 1;
-        transform: scale(0) rotate(0deg);
-    }
-    20% {
-        opacity: 1;
-        transform: scale(1.5) rotate(180deg);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.5) rotate(720deg);
-    }
-}
-
-.party-sparkle.exploding {
-    animation: sparkleExplosion 1.5s ease-out forwards;
-}
-
-/* Smaller party hats on mobile */
 @media (max-width: 768px) {
-    .party-hat {
-        width: 30px;
-        height: 30px;
+    .finance-coin {
+        width: 22px;
+        height: 22px;
     }
 }
 

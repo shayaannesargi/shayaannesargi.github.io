@@ -494,15 +494,15 @@ document.addEventListener('DOMContentLoaded', () => {
         window.applyBHoverEffect(document.body);
     }
 
-    // Initialize party hat explosion feature
-    new PartyHatExplosion();
+    // Initialize finance burst feature
+    new FinanceBurst();
     
     // Add loading state management
     document.body.classList.add('loaded');
     
     // Console message for developers
     console.log('🌵 Portfolio site loaded successfully!');
-    console.log('🎉 Click the logo for a party surprise!');
+    console.log('📈 Click the logo for a finance pulse!');
     console.log('Built with inspiration from astro-theme-cactus');
 });
 
@@ -527,30 +527,21 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Party Hat Explosion Feature
-class PartyHatExplosion {
+// Finance Burst Feature
+class FinanceBurst {
     constructor() {
         this.isAnimating = false;
         this.init();
     }
 
     init() {
-        // Find the logo link and add click handler
-        const logoLink = document.querySelector('#main-header a[href="#"]');
-        if (logoLink) {
-            logoLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.triggerExplosion();
-            });
-        }
+        // Logo is intentionally non-interactive.
     }
 
     triggerExplosion() {
-        // Check if user prefers reduced motion
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReducedMotion) {
-            // Just do a simple pulse for users who prefer reduced motion
-            const logoSvg = document.querySelector('#main-header svg');
+            const logoSvg = document.querySelector('#main-header img');
             if (logoSvg) {
                 logoSvg.classList.add('logo-party-pulse');
                 setTimeout(() => {
@@ -559,153 +550,78 @@ class PartyHatExplosion {
             }
             return;
         }
-        
-        // Get logo position for explosion origin
-        const logoSvg = document.querySelector('#main-header svg');
-        if (!logoSvg) return;
-        
-        const logoRect = logoSvg.getBoundingClientRect();
+
+        const logoImg = document.querySelector('#main-header img');
+        if (!logoImg) return;
+
+        const logoRect = logoImg.getBoundingClientRect();
         const centerX = logoRect.left + logoRect.width / 2;
         const centerY = logoRect.top + logoRect.height / 2;
         const explosionId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-        
-        // Add pulse animation to logo
-        logoSvg.classList.add('logo-party-pulse');
-        
-        // Create party hats explosion
-        this.createPartyHats(centerX, centerY, explosionId);
-        
-        // Create sparkles
-        this.createSparkles(centerX, centerY, explosionId);
-        
-        // Clean up after animation
+
+        logoImg.classList.add('logo-party-pulse');
+        this.createCoinSpiral(centerX, centerY, explosionId);
+
         setTimeout(() => {
-            logoSvg.classList.remove('logo-party-pulse');
-            // Clean up any remaining elements for this explosion only
+            logoImg.classList.remove('logo-party-pulse');
             this.cleanupExplosionElements(explosionId);
-        }, 2500);
+        }, 750);
     }
 
     cleanupExplosionElements(explosionId) {
-        // Remove any remaining party hats for this explosion
-        const remainingHats = document.querySelectorAll(`.party-hat[data-explosion="${explosionId}"]`);
-        remainingHats.forEach(hat => {
-            if (hat.parentNode) {
-                hat.parentNode.removeChild(hat);
-            }
-        });
-        
-        // Remove any remaining sparkles for this explosion
-        const remainingSparkles = document.querySelectorAll(`.party-sparkle[data-explosion="${explosionId}"]`);
-        remainingSparkles.forEach(sparkle => {
-            if (sparkle.parentNode) {
-                sparkle.parentNode.removeChild(sparkle);
+        const remainingCoins = document.querySelectorAll(`.finance-coin[data-explosion="${explosionId}"]`);
+        remainingCoins.forEach(coin => {
+            if (coin.parentNode) {
+                coin.parentNode.removeChild(coin);
             }
         });
     }
 
-    createPartyHats(centerX, centerY, explosionId) {
-        const hatCount = 12; // Number of party hats to create
-        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff', '#5f27cd'];
-        
-        for (let i = 0; i < hatCount; i++) {
-            const hat = document.createElement('div');
-            hat.className = 'party-hat';
-            hat.setAttribute('data-explosion', explosionId);
-            
-            // Create party hat SVG
-            hat.innerHTML = this.getPartyHatSVG(colors[i % colors.length]);
-            
-            // Calculate explosion direction
-            const angle = (360 / hatCount) * i;
+    createCoinSpiral(centerX, centerY, explosionId) {
+        const coinCount = 16;
+        const colors = ['#f59e0b', '#fbbf24', '#fcd34d', '#d97706', '#0d5bd7'];
+
+        for (let i = 0; i < coinCount; i++) {
+            const coin = document.createElement('div');
+            coin.className = 'finance-coin';
+            coin.setAttribute('data-explosion', explosionId);
+            coin.innerHTML = this.getCoinSVG(colors[i % colors.length]);
+
+            const angle = (360 / coinCount) * i;
             const radian = (angle * Math.PI) / 180;
-            const distance = 150 + Math.random() * 100; // Random distance between 150-250px
-            
+            const distance = 20 + (i * 7);
             const targetX = centerX + Math.cos(radian) * distance;
             const targetY = centerY + Math.sin(radian) * distance;
-            
-            // Set initial position
-            hat.style.left = centerX + 'px';
-            hat.style.top = centerY + 'px';
-            
-            // Add to DOM
-            document.body.appendChild(hat);
-            
-            // Trigger animation with slight delay for staggered effect
+
+            coin.style.left = centerX + 'px';
+            coin.style.top = centerY + 'px';
+            coin.style.transform = 'translate(-50%, -50%) rotate(' + (angle + 90) + 'deg)';
+            coin.style.opacity = '1';
+            document.body.appendChild(coin);
+
             setTimeout(() => {
-                hat.classList.add('exploding');
-                hat.style.left = targetX + 'px';
-                hat.style.top = targetY + 'px';
-                hat.style.transition = 'left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94), top 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            }, i * 50);
-            
-            // Clean up after animation
+                coin.classList.add('spiraling');
+                coin.style.left = targetX + 'px';
+                coin.style.top = targetY + 'px';
+                coin.style.transform = 'translate(-50%, -50%) rotate(' + (angle + 180) + 'deg) scale(0.8)';
+                coin.style.transition = 'left 0.75s cubic-bezier(0.22, 1, 0.36, 1), top 0.75s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s ease';
+                coin.style.opacity = '0';
+            }, i * 18);
+
             setTimeout(() => {
-                if (hat.parentNode) {
-                    hat.parentNode.removeChild(hat);
+                if (coin.parentNode) {
+                    coin.parentNode.removeChild(coin);
                 }
-            }, 2500);
+            }, 750);
         }
     }
 
-    createSparkles(centerX, centerY, explosionId) {
-        const sparkleCount = 20;
-        
-        for (let i = 0; i < sparkleCount; i++) {
-            const sparkle = document.createElement('div');
-            sparkle.className = 'party-sparkle';
-            sparkle.setAttribute('data-explosion', explosionId);
-            
-            // Random colors for sparkles
-            const hue = Math.random() * 360;
-            sparkle.style.background = `hsl(${hue}, 70%, 60%)`;
-            
-            // Calculate explosion direction
-            const angle = Math.random() * 360;
-            const radian = (angle * Math.PI) / 180;
-            const distance = 80 + Math.random() * 120;
-            
-            const targetX = centerX + Math.cos(radian) * distance;
-            const targetY = centerY + Math.sin(radian) * distance;
-            
-            // Set initial position
-            sparkle.style.left = centerX + 'px';
-            sparkle.style.top = centerY + 'px';
-            
-            // Add to DOM
-            document.body.appendChild(sparkle);
-            
-            // Trigger animation with slight delay
-            setTimeout(() => {
-                sparkle.classList.add('exploding');
-                sparkle.style.left = targetX + 'px';
-                sparkle.style.top = targetY + 'px';
-                sparkle.style.transition = 'left 1.5s ease-out, top 1.5s ease-out';
-            }, i * 30);
-            
-            // Clean up after animation
-            setTimeout(() => {
-                if (sparkle.parentNode) {
-                    sparkle.parentNode.removeChild(sparkle);
-                }
-            }, 2000);
-        }
-    }
-
-    getPartyHatSVG(color) {
+    getCoinSVG(color) {
         return `
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <!-- Party hat triangle -->
-                <path d="M50 10 L20 80 L80 80 Z" fill="${color}" stroke="#333" stroke-width="2"/>
-                <!-- Hat brim -->
-                <ellipse cx="50" cy="80" rx="30" ry="8" fill="#333"/>
-                <!-- Decorative stripes -->
-                <path d="M25 35 L75 35" stroke="white" stroke-width="2" opacity="0.8"/>
-                <path d="M30 50 L70 50" stroke="white" stroke-width="2" opacity="0.8"/>
-                <path d="M35 65 L65 65" stroke="white" stroke-width="2" opacity="0.8"/>
-                <!-- Pom-pom on top -->
-                <circle cx="50" cy="10" r="6" fill="white" stroke="#333" stroke-width="1"/>
-                <circle cx="50" cy="10" r="3" fill="${color}"/>
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="24" fill="${color}" stroke="#ffffff" stroke-width="5"/>
+                <circle cx="40" cy="40" r="9" fill="rgba(255,255,255,0.8)"/>
+                <path d="M40 20 V60 M20 40 H60" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
             </svg>
         `;
     }
